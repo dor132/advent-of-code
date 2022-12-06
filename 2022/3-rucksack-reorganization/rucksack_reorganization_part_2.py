@@ -24,7 +24,7 @@ def find_shared_compartments_item(bags):
   # #bags times consequitively in the list.
   consequitive_length = len(bags)
   merged_comps = list(heapq.merge(*bags))
-  for idx in range(len(merged_comps[:-1])):
+  for idx in range(len(merged_comps[:-consequitive_length+1])):
     if len(set(merged_comps[idx:idx+consequitive_length])) == 1:
       return merged_comps[idx]
 
